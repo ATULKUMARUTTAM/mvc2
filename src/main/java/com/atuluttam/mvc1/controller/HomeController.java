@@ -47,11 +47,8 @@ public class HomeController {
             m.addAttribute("password", pass);
            return "EmployeeData";
         }
-
-
     @Autowired
     StudentRepo studentRepo;
-
     @RequestMapping("/student")
     public String StudentForm()
     {
@@ -63,19 +60,11 @@ public class HomeController {
             m.addAttribute("msg", "Student Saved!!!!");
         return "savesuccess";
     }
-
-
     @RequestMapping("/getall")
     public String getallStudents(Model model)
     {
         List<Student> studentList = studentRepo.findAll();
-
-
         model.addAttribute("students", studentList);
         return "all";
     }
-
-
-
-
 }
